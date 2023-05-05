@@ -1,9 +1,17 @@
-# Проект: Место
+# Проект: Sensor (тех задание для Bolid)
 
-### Обзор
+## Обзор
 
-Проект создан с использзованием адаптивной вёрстки и скриптов для взаимодействия с пользователем
-В дальнейшем планируется возможность добавления карточек и возможно что еще
+### Динамичное формирование карточек при помощи JavaScript и адаптивной весткой
+
+---
+## Контакты:
+[![Telegram](https://img.shields.io/badge/-Telegram-090909?style=for-the-badge&logo=Telegram)](https://t.me/Kingoftheall)
+[![ВKontakte](https://img.shields.io/badge/-Вконтакте-090909?style=for-the-badge&logo=VK)](https://vk.com/kingoftheall)
+
+---
+- Добавление / удаление карточек
+- Редактирование информации о карточки
 
  ## Технологии:
 ![JavaScript](https://img.shields.io/badge/-JavaScript-090909?style=for-the-badge&logo=JavaScript)
@@ -14,7 +22,7 @@
 ---
 ## Инструкция по установке:
 1. Клонировать репозиторий
-`git clone `
+`git clone git@github.com:KingOFTeAll/Sensor.git`
 2. Установить зависимости
 `npm i`
 3. Запустить проект локально
