@@ -1,0 +1,12 @@
+.elements{
+    margin: 40px auto;
+    display: flex;
+    padding: 25px 20px;
+    max-width: 72%;
+    min-width: 280px;
+    border-top: 2px solid #B8B8B8;
+    border-left: 2px solid #B8B8B8;
+    border-right: 2px solid #B8B8B8;
+    border-radius: 30px;
+    min-height: 300px;
+ }

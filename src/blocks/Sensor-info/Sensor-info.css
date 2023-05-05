@@ -1,0 +1,7 @@
+.Sensor-info{
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #2A2C2F;
+}
