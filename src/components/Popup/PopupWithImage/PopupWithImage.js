@@ -12,7 +12,6 @@ export class PopupWithImage extends Popup {
 
 
     showPopupImgCard(cardData) {
-        console.log(cardData);
         this.__popupName.textContent = cardData.name;
         this._popupID.textContent = cardData.sensor_id;
         this._popupTemp.textContent = cardData.temperature;

@@ -6,24 +6,26 @@ import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
 import { PopupWithImage } from '../components/Popup/PopupWithImage/PopupWithImage.js';
 import { PopupWithForm } from '../components/Popup/PopupWithForm/PopupWithForm.js';
-
 //Функциональность прописана с использованием LocalStorage, для того, чтобы не терять карточки при перезагрузке
 // Данная реализация связана с тем,что редактировать файл JSON возможно через node, который я освоил не достаточным образом пока что
 
 const massiveCards = JSON.parse(localStorage.getItem('masSens'));
 localStorage.setItem('masSens', JSON.stringify(jsonmas));
- 
+
 
 const massive = [];
 
-// Функция создания карточек: забирает данные с даты м формирует карточку, сразу подгружая её в локальное хранилище
+// Функция создания карточек: забирает данные с даты и формирует карточку, сразу подгружая её в локальное хранилище
   function createCard(cardData){
     massive.push(cardData)
     localStorage.setItem('masSens', JSON.stringify(massive));
     return new Card({ 
         cardData, 
         handleCardClick: () => {
-            popupImage.showPopupImgCard(cardData);
+          const newCardData = JSON.parse(localStorage.getItem('editObject'))
+          if(newCardData){
+            popupImage.showPopupImgCard(newCardData);
+          }else{popupImage.showPopupImgCard(cardData);}
         } 
     }, '.template').getCard();
   };
@@ -57,7 +59,7 @@ const massive = [];
   newCardPopup.setEventListeners();
   
   const formValidators = {};
-// Организация валидации данных. В данном случае валидировать особо нечего т.к почти все данные вводятся в виде чисел, но валидация прописана наиболее универсально
+// Организация валидации данных. В данном случае валидировать особо нечего т.к почти все данные вводятся в виде чисел, но валидация прописана наиболее общим способом
   const enableValidation = (config) => {
     const formList = Array.from(document.querySelectorAll(config.formSelector));
     formList.forEach((formElement) => {

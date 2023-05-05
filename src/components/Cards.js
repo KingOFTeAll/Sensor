@@ -57,14 +57,20 @@ export class Card {
 // устанавливает данные в карточку и в локальное хранилище
   _editCard(){
     const userInfoPopup = new PopupWithForm({ popupSelector: '.popup__edit-card', submitFunction: (data) => {
-      const raw = JSON.parse(localStorage.getItem('masSens'));
-      const cardInd = raw.findIndex((masEl)=> data.sensor_id === masEl.sensor_id);
       raw[cardInd] = data;
       localStorage.setItem('masSens', JSON.stringify(raw));
+      localStorage.setItem('editObject', JSON.stringify(raw[cardInd]))
+      console.log(this.cardData)
       this.setCardInfo(data);
-        console.log(cardInd);
         userInfoPopup.closePopup();
       }
+      });
+      const raw = JSON.parse(localStorage.getItem('masSens'));
+      const cardInd = raw.findIndex((masEl)=> {
+ 
+       return Number(this.getCardInfo().sensor_id) === Number(masEl.sensor_id)
+
+      
       });
     userInfoPopup.setEventListeners();
     userInfoPopup.setInputValues({
