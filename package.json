@@ -1,11 +1,9 @@
 {
   "name": "new_webpack",
   "version": "1.0.0",
-  "description": "pr8",
+  "description": "BolidTS",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build",
     "build": "webpack --mode production",
     "dev": "webpack serve"
   },

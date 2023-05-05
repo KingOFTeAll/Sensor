@@ -1,6 +1,6 @@
 import { Popup } from '../Popup'
 import { formSetting } from '../../../consts/consts.js'
-
+// класс для управления попапом с формой
 export class PopupWithForm extends Popup {
     constructor({ popupSelector, submitFunction }) {
         super(popupSelector);

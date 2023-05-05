@@ -25,20 +25,15 @@ export class Card {
   };
   
   _createCard() {
-    const raw = localStorage.getItem('masSens');
-const massiveCards = JSON.parse(raw);
     this._cardId.textContent = this._cardData.sensor_id;
     this._cardName.textContent = this._cardData.name;
     this._cardTemp.textContent = this._cardData.temperature;
     this._cardHum.textContent = this._cardData.humidity;
-    massiveCards.forEach((element, e) => {
-        localStorage.setItem(`${massiveCards[e].sensor_id}`, JSON.stringify(this._cardData))
-    });
       return this._card
   };
 
-  const  = {};
 
+// получение информации для попапа редактирования
   getCardInfo() {
     
     return {
@@ -50,18 +45,24 @@ const massiveCards = JSON.parse(raw);
   }
 
 
-  
+  // установление информации для попапа редактирования
   setCardInfo({ sensor_id, name, temperature, humidity}) {
+
     this._cardId.textContent = sensor_id;
     this._cardName.textContent = name;
     this._cardTemp.textContent = temperature;
     this._cardData.humidity = humidity;
   }
-
+// функция, вызываемая при открытии попапа редактирования
+// устанавливает данные в карточку и в локальное хранилище
   _editCard(){
     const userInfoPopup = new PopupWithForm({ popupSelector: '.popup__edit-card', submitFunction: (data) => {
-        this.setCardInfo(data);
-        console.log(data);
+      const raw = JSON.parse(localStorage.getItem('masSens'));
+      const cardInd = raw.findIndex((masEl)=> data.sensor_id === masEl.sensor_id);
+      raw[cardInd] = data;
+      localStorage.setItem('masSens', JSON.stringify(raw));
+      this.setCardInfo(data);
+        console.log(cardInd);
         userInfoPopup.closePopup();
       }
       });
@@ -82,7 +83,7 @@ const massiveCards = JSON.parse(raw);
   };
 
 
-
+// установление слушателей
   _setEventListeners() {
       this._cardDeleteButton.addEventListener('click', () => this._deleteCard());
       this._cardEditButton.addEventListener('click', () => {this._editCard()});
