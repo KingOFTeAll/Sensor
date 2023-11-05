@@ -1,0 +1,51 @@
+.me{
+    max-width: 95%;
+    min-height: 30px;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 70px;
+}
+
+.me__logo{
+    max-height: 100%;
+    max-width: 125px;
+    background-color: rgb(252, 251, 185)
+}
+
+.me__img{
+    object-fit: cover;
+    width: 125px;
+    max-height: 100%;
+}
+
+.header__navigate{
+    display: flex;
+    margin: 0 10px 0 0;
+    max-height: 100%;
+    max-width: 250px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__sign{
+    background-color: #2A2C2F;
+    height: 38px;
+    width: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(252, 251, 185);
+    border-radius: 20px;
+}
+
+.header__sign-text{
+    margin: 0;
+    color: rgb(252, 251, 185);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    
+}

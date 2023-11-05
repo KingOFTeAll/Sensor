@@ -1,0 +1,37 @@
+.footer{
+    margin: 0%;
+    padding: 20px 40px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.footer_copyright{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #B8B8B8;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.footer_contacts-container{
+    color: #B8B8B8;
+}
+
+.footer_contacts{
+    color: #B8B8B8;
+    padding: 0%;
+    text-align: left;
+}
+
+.footer_contact{
+    list-style: none;
+    color: #B8B8B8;
+    text-align: left;
+}
